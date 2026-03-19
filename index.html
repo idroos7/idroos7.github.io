@@ -6,22 +6,21 @@
 <title>Muzamil Idroos — Certification Manager</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
 :root{
-  --bg:#F5F7FF;
+  --bg:#EFF3FB;
   --white:#FFFFFF;
-  --blue:#1A56DB;
-  --blue-light:#EEF3FF;
-  --blue-mid:#DDEAFF;
-  --teal:#0891B2;
-  --teal-light:#E0F7FA;
-  --border:#DDE3F0;
-  --border-dark:#B8C4DC;
+  --blue:#1A4FDB;
+  --blue-light:#E8EFFE;
+  --blue-mid:#C5D5FA;
+  --teal:#0E7490;
+  --teal-light:#CCEFF7;
+  --border:#CBD8EF;
   --text:#0A1628;
-  --muted:#2E3F5C;
+  --muted:#28395A;
   --dim:#4A5A78;
   --font-head:'Syne',sans-serif;
   --font-mono:'IBM Plex Mono',monospace;
@@ -31,15 +30,15 @@
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-weight:400;line-height:1.7;font-size:16px;overflow-x:hidden;}
 
-.page{max-width:920px;margin:0 auto;padding:3rem 2rem 6rem;}
+.page{max-width:960px;margin:0 auto;padding:2.5rem 2rem 5rem;}
 
 /* ── HEADER ── */
 .header{
   background:var(--white);
   border:1px solid var(--border);
   border-radius:16px;
-  padding:2.5rem 2.5rem 2rem;
-  margin-bottom:2rem;
+  padding:2.5rem;
+  margin-bottom:1.75rem;
   display:grid;
   grid-template-columns:1fr auto;
   gap:2rem;
@@ -47,253 +46,167 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-we
   position:relative;
   overflow:hidden;
 }
-
 .header::before{
   content:'';
   position:absolute;
-  top:0;left:0;right:0;
-  height:5px;
+  top:0;left:0;right:0;height:5px;
   background:linear-gradient(90deg,var(--blue),var(--teal));
 }
 
 .name{
   font-family:var(--font-head);
-  font-size:clamp(2.2rem,5vw,3.4rem);
+  font-size:clamp(2.4rem,5vw,3.6rem);
   font-weight:800;
   line-height:1;
   color:var(--text);
   letter-spacing:-0.02em;
 }
-
 .name span{color:var(--blue);}
 
 .job-title{
   font-family:var(--font-mono);
-  font-size:0.72rem;
+  font-size:0.8rem;
   color:var(--teal);
-  letter-spacing:0.12em;
+  letter-spacing:0.1em;
   text-transform:uppercase;
-  margin-top:0.6rem;
+  margin-top:0.65rem;
+  font-weight:500;
 }
-
-.contact-block{
-  display:flex;
-  flex-direction:column;
-  gap:0.45rem;
-  text-align:right;
-}
-
-.contact-item{
-  font-family:var(--font-mono);
-  font-size:0.82rem;
-  color:var(--muted);
-  letter-spacing:0.04em;
-}
-
-.contact-item a{color:var(--blue);text-decoration:none;}
-.contact-item a:hover{text-decoration:underline;}
 
 .badge{
   display:inline-block;
   background:var(--blue-light);
   color:var(--blue);
   font-family:var(--font-mono);
-  font-size:0.65rem;
-  letter-spacing:0.08em;
-  padding:0.25rem 0.65rem;
+  font-size:0.75rem;
+  font-weight:500;
+  letter-spacing:0.06em;
+  padding:0.3rem 0.85rem;
   border-radius:100px;
   border:1px solid var(--blue-mid);
-  margin-top:0.4rem;
-  text-align:center;
+  margin-top:0.65rem;
 }
 
-/* ── GRID LAYOUT ── */
-.main-grid{display:grid;grid-template-columns:1fr 2fr;gap:1.5rem;}
+.contact-block{display:flex;flex-direction:column;gap:0.5rem;text-align:right;}
+.contact-item{font-family:var(--font-mono);font-size:0.8rem;color:var(--muted);letter-spacing:0.03em;}
+.contact-item a{color:var(--blue);text-decoration:none;}
+.contact-item a:hover{text-decoration:underline;}
+
+/* ── GRID ── */
+.main-grid{display:grid;grid-template-columns:300px 1fr;gap:1.5rem;}
 .left-col{display:flex;flex-direction:column;gap:1.5rem;}
 .right-col{display:flex;flex-direction:column;gap:1.5rem;}
 
 /* ── CARD ── */
-.card{
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:1.5rem;
-}
+.card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;}
 
 .card-title{
   font-family:var(--font-head);
-  font-size:0.85rem;
+  font-size:0.82rem;
   font-weight:700;
-  letter-spacing:0.15em;
+  letter-spacing:0.14em;
   text-transform:uppercase;
   color:var(--blue);
   margin-bottom:1.25rem;
   padding-bottom:0.75rem;
-  border-bottom:1px solid var(--border);
-  display:flex;
-  align-items:center;
-  gap:0.5rem;
+  border-bottom:1.5px solid var(--blue-mid);
+  display:flex;align-items:center;gap:0.5rem;
 }
-
-.card-title::before{
-  content:'';
-  width:3px;
-  height:14px;
-  background:var(--blue);
-  border-radius:2px;
-  flex-shrink:0;
-}
+.card-title::before{content:'';width:3px;height:15px;background:var(--blue);border-radius:2px;flex-shrink:0;}
 
 /* ── ABOUT ── */
-.about-text{font-size:0.95rem;color:var(--text);line-height:1.85;}
+.about-text{font-size:0.95rem;color:var(--muted);line-height:1.8;}
 .about-text strong{color:var(--text);font-weight:700;}
 
 /* ── COMPETENCIES ── */
-.comp-list{display:flex;flex-direction:column;gap:0.4rem;}
+.comp-list{display:flex;flex-direction:column;gap:0.45rem;}
 .comp-item{
-  font-size:0.875rem;
-  color:var(--text);
-  padding:0.45rem 0.7rem;
-  background:var(--bg);
-  border:1px solid var(--border);
-  border-radius:6px;
-  display:flex;
-  align-items:center;
-  gap:0.5rem;
+  font-size:0.875rem;color:var(--text);
+  padding:0.5rem 0.75rem;
+  background:var(--bg);border:1px solid var(--border);border-radius:7px;
+  display:flex;align-items:center;gap:0.55rem;
   transition:border-color 0.2s,background 0.2s;
 }
 .comp-item:hover{border-color:var(--blue);background:var(--blue-light);}
-.comp-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0;}
+.comp-dot{width:7px;height:7px;background:var(--blue);border-radius:50%;flex-shrink:0;}
 
 /* ── CERTIFICATIONS ── */
-.cert-list{display:flex;flex-direction:column;gap:0.6rem;}
+.cert-list{display:flex;flex-direction:column;gap:0.65rem;}
 .cert-item{
-  padding:0.75rem;
+  padding:0.85rem;
   background:var(--blue-light);
   border:1px solid var(--blue-mid);
-  border-radius:8px;
+  border-radius:9px;
 }
-.cert-name{font-size:0.9rem;font-weight:700;color:var(--text);line-height:1.3;}
-.cert-meta{display:flex;justify-content:space-between;align-items:center;margin-top:0.3rem;}
-.cert-issuer{font-family:var(--font-mono);font-size:0.75rem;color:var(--muted);}
+.cert-name{font-size:0.875rem;font-weight:700;color:var(--text);line-height:1.35;}
+.cert-meta{display:flex;justify-content:space-between;align-items:center;margin-top:0.35rem;}
+.cert-issuer{font-family:var(--font-mono);font-size:0.72rem;color:var(--dim);}
 .cert-date{
-  font-family:var(--font-mono);
-  font-size:0.72rem;
-  color:var(--white);
-  background:var(--blue);
-  padding:0.15rem 0.5rem;
-  border-radius:100px;
+  font-family:var(--font-mono);font-size:0.7rem;
+  color:var(--white);background:var(--blue);
+  padding:0.18rem 0.6rem;border-radius:100px;
 }
 
 /* ── TOOLS ── */
-.tools-wrap{display:flex;flex-wrap:wrap;gap:0.4rem;}
+.tools-wrap{display:flex;flex-wrap:wrap;gap:0.45rem;}
 .tool-tag{
-  background:var(--teal-light);
-  border:1px solid #A5D8E6;
-  color:var(--teal);
-  font-family:var(--font-mono);
-  font-size:0.78rem;
-  padding:0.25rem 0.65rem;
-  border-radius:100px;
-  letter-spacing:0.05em;
+  background:var(--teal-light);border:1px solid #93D4E8;
+  color:var(--teal);font-family:var(--font-mono);font-size:0.76rem;font-weight:500;
+  padding:0.28rem 0.7rem;border-radius:100px;
 }
 
 /* ── EDUCATION ── */
 .edu-list{display:flex;flex-direction:column;gap:0.75rem;}
 .edu-item{
-  padding:0.85rem;
+  padding:0.9rem;
   border-left:3px solid var(--blue);
-  background:var(--bg);
-  border-radius:0 8px 8px 0;
+  background:var(--bg);border-radius:0 8px 8px 0;
 }
-.edu-degree{font-size:0.92rem;font-weight:700;color:var(--text);}
-.edu-uni{font-size:0.85rem;color:var(--muted);margin-top:0.15rem;}
-.edu-year{font-family:var(--font-mono);font-size:0.75rem;color:var(--blue);margin-top:0.3rem;}
+.edu-degree{font-size:0.9rem;font-weight:700;color:var(--text);}
+.edu-uni{font-size:0.82rem;color:var(--muted);margin-top:0.15rem;}
+.edu-year{font-family:var(--font-mono);font-size:0.72rem;color:var(--blue);margin-top:0.3rem;font-weight:500;}
 
 /* ── EXPERIENCE ── */
 .exp-list{display:flex;flex-direction:column;gap:1.5rem;}
 .exp-item{
   padding:1.25rem 1.25rem 1.25rem 1.5rem;
   border-left:3px solid var(--border);
-  position:relative;
-  transition:border-color 0.2s;
+  position:relative;transition:border-color 0.2s;
+  border-radius:0 10px 10px 0;
 }
-.exp-item:hover{border-left-color:var(--blue);}
+.exp-item:hover{border-left-color:var(--blue);background:var(--bg);}
 .exp-item::before{
-  content:'';
-  position:absolute;
-  left:-6px;top:1.1rem;
-  width:9px;height:9px;
-  background:var(--white);
-  border:2px solid var(--blue);
-  border-radius:50%;
+  content:'';position:absolute;left:-6px;top:1.2rem;
+  width:10px;height:10px;
+  background:var(--white);border:2.5px solid var(--blue);border-radius:50%;
 }
 
 .exp-role{font-family:var(--font-head);font-size:1.05rem;font-weight:700;color:var(--text);}
-.exp-company{
-  font-family:var(--font-mono);
-  font-size:0.78rem;
-  color:var(--blue);
-  letter-spacing:0.06em;
-  margin-top:0.15rem;
-}
-.exp-period{
-  font-family:var(--font-mono);
-  font-size:0.72rem;
-  color:var(--dim);
-  margin-top:0.1rem;
-  letter-spacing:0.04em;
-}
+.exp-company{font-family:var(--font-mono);font-size:0.78rem;color:var(--blue);letter-spacing:0.05em;margin-top:0.2rem;font-weight:500;}
+.exp-period{font-family:var(--font-mono);font-size:0.72rem;color:var(--dim);margin-top:0.1rem;}
 
-.exp-bullets{margin-top:0.85rem;display:flex;flex-direction:column;gap:0.4rem;}
+.exp-bullets{margin-top:0.9rem;display:flex;flex-direction:column;gap:0.45rem;}
 .exp-bullet{
-  font-size:0.9rem;
-  color:var(--text);
-  line-height:1.65;
-  padding-left:1rem;
-  position:relative;
+  font-size:0.9rem;color:var(--muted);line-height:1.65;
+  padding-left:1.1rem;position:relative;
 }
-.exp-bullet::before{
-  content:'▸';
-  position:absolute;left:0;
-  color:var(--blue);
-  font-size:0.7rem;top:0.2rem;
-}
+.exp-bullet::before{content:'▸';position:absolute;left:0;color:var(--blue);font-size:0.72rem;top:0.22rem;}
 
-.tag-row{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.85rem;}
+.tag-row{display:flex;flex-wrap:wrap;gap:0.38rem;margin-top:0.9rem;}
 .tag{
-  background:var(--blue-light);
-  border:1px solid var(--blue-mid);
-  color:var(--blue);
-  font-family:var(--font-mono);
-  font-size:0.72rem;
-  letter-spacing:0.06em;
-  padding:0.18rem 0.55rem;
-  border-radius:100px;
+  background:var(--blue-light);border:1px solid var(--blue-mid);
+  color:var(--blue);font-family:var(--font-mono);font-size:0.72rem;font-weight:500;
+  padding:0.2rem 0.6rem;border-radius:100px;
 }
 
-/* ── FOOTER ── */
-.page-footer{
-  margin-top:2.5rem;
-  padding:1rem 1.5rem;
-  background:var(--white);
-  border:1px solid var(--border);
-  border-radius:10px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.footer-name{font-family:var(--font-mono);font-size:0.78rem;color:var(--muted);}
-.footer-tag{font-family:var(--font-mono);font-size:0.78rem;color:var(--muted);}
 
 /* ── ANIMATIONS ── */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 .header{animation:fadeUp 0.5s ease forwards;}
 .main-grid{animation:fadeUp 0.6s 0.15s ease forwards;opacity:0;}
-.page-footer{animation:fadeUp 0.6s 0.3s ease forwards;opacity:0;}
 
 /* ── RESPONSIVE ── */
-@media(max-width:720px){
+@media(max-width:760px){
   .main-grid{grid-template-columns:1fr;}
   .header{grid-template-columns:1fr;}
   .contact-block{text-align:left;}
@@ -302,6 +215,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-we
 @media print{
   body{background:#fff;}
   .header,.card{box-shadow:none;}
+  .page-footer{display:none;}
 }
 </style>
 </head>
@@ -318,40 +232,38 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-we
     <div class="contact-block">
       <div class="contact-item">📍 Chennai, India</div>
       <div class="contact-item"><a href="tel:+919042900550">+91 90429 00550</a></div>
-      <div class="contact-item">muzamilidroos@gmail.com</div>
+      <div class="contact-item"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="cba6beb1aaa6a2a7a2afb9a4a4b88baca6aaa2a7e5a8a4a6">[email&#160;protected]</a></div>
     </div>
   </header>
 
   <!-- MAIN GRID -->
   <div class="main-grid">
 
-    <!-- LEFT COLUMN -->
+    <!-- LEFT -->
     <div class="left-col">
 
-      <!-- ABOUT -->
       <div class="card">
         <div class="card-title">Profile</div>
         <p class="about-text">
-          Certification Manager with <strong>6+ years</strong> in EMV L3 Certification, Software Testing &amp; Project Management in the <strong>U.S. Payment &amp; Banking domain</strong>. Expert in ISO 8583 validation, POS terminal testing, and full STLC across Agile &amp; Waterfall environments.
+          Certification Manager with <strong>6+ years</strong> of experience in EMV L3 Certification, Software Testing, and Project Management in the <strong>U.S. Payment &amp; Banking domain</strong>. Expert in ISO 8583 validation, POS terminal testing for Newland and Castles Technologies, and the full STLC in both Agile and Waterfall environments.
         </p>
       </div>
 
-      <!-- COMPETENCIES -->
       <div class="card">
         <div class="card-title">Core Competencies</div>
         <div class="comp-list">
-          <div class="comp-item"><div class="comp-dot"></div>EMV L3 Certification</div>
+          <div class="comp-item"><div class="comp-dot"></div>EMV L3 Certification (MC, VISA, AMEX, Discover, JCB)</div>
           <div class="comp-item"><div class="comp-dot"></div>Acquirer Integration</div>
           <div class="comp-item"><div class="comp-dot"></div>ISO 8583 Validation</div>
-          <div class="comp-item"><div class="comp-dot"></div>Software Testing Life Cycle</div>
+          <div class="comp-item"><div class="comp-dot"></div>Software Testing Life Cycle (STLC)</div>
           <div class="comp-item"><div class="comp-dot"></div>Agile Scrum / SQA</div>
           <div class="comp-item"><div class="comp-dot"></div>Team Management &amp; Training</div>
           <div class="comp-item"><div class="comp-dot"></div>Web, Mobile, SQL &amp; API Testing</div>
           <div class="comp-item"><div class="comp-dot"></div>Testing Standards &amp; Metrics</div>
+          <div class="comp-item"><div class="comp-dot"></div>Requirements Traceability Matrix (RTM)</div>
         </div>
       </div>
 
-      <!-- CERTIFICATIONS -->
       <div class="card">
         <div class="card-title">Certifications</div>
         <div class="cert-list">
@@ -379,7 +291,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-we
         </div>
       </div>
 
-      <!-- TOOLS -->
       <div class="card">
         <div class="card-title">Tools &amp; Technologies</div>
         <div class="tools-wrap">
@@ -390,11 +301,10 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-we
           <div class="tool-tag">ISO 8583</div>
           <div class="tool-tag">EMV Logs</div>
           <div class="tool-tag">SQL</div>
-          <div class="tool-tag">Agile/Scrum</div>
+          <div class="tool-tag">Agile / Scrum</div>
         </div>
       </div>
 
-      <!-- EDUCATION -->
       <div class="card">
         <div class="card-title">Education</div>
         <div class="edu-list">
@@ -413,7 +323,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-we
 
     </div>
 
-    <!-- RIGHT COLUMN — EXPERIENCE -->
+    <!-- RIGHT — EXPERIENCE -->
     <div class="right-col">
       <div class="card">
         <div class="card-title">Work Experience</div>
@@ -421,25 +331,32 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-we
 
           <div class="exp-item">
             <div class="exp-role">Certification Manager</div>
-            <div class="exp-company">Valor Paytech, Chennai</div>
+            <div class="exp-company">Valor Paytech — Chennai</div>
             <div class="exp-period">November 2024 – Present</div>
             <div class="exp-bullets">
               <div class="exp-bullet">Managing multiple EMV L3 Acquirer Certifications with TSYS (Sierra), Fiserv (Omaha, North), EPX, Elavon, Worldpay, and Postillion for the Valor Gateway.</div>
               <div class="exp-bullet">Leading L3 Certification Testing for MasterCard, VISA, AMEX, Discover, UnionPay, and JCB card schemes.</div>
               <div class="exp-bullet">Leading and managing a team of 5 engineers; providing training aligned with industry standards.</div>
-              <div class="exp-bullet">Conducting ISO 8583 log reviews using UL BTT, ICC TMat, and EMV transaction log analysis to identify issues.</div>
-              <div class="exp-bullet">Collaborating with Development Team to debug terminal software issues; reporting defects via TestLink.</div>
+              <div class="exp-bullet">Conducting ISO 8583 log reviews using UL BTT, ICC TMat, and EMV transaction log analysis to identify and resolve issues.</div>
+              <div class="exp-bullet">Collaborating with Development Team to debug terminal software; reporting defects via TestLink.</div>
               <div class="exp-bullet">Additional role as POS and Payment Switch Software Tester — creating test scripts, test cases, and executing test methodologies.</div>
               <div class="exp-bullet">Participating in Agile ceremonies and conducting periodic compliance audits through project sign-off.</div>
             </div>
             <div class="tag-row">
-              <div class="tag">EMV L3</div><div class="tag">TSYS</div><div class="tag">Fiserv</div><div class="tag">Elavon</div><div class="tag">Worldpay</div><div class="tag">UL BTT</div><div class="tag">ICC TMat</div><div class="tag">ISO 8583</div>
+              <div class="tag">EMV L3</div>
+              <div class="tag">TSYS</div>
+              <div class="tag">Fiserv</div>
+              <div class="tag">Elavon</div>
+              <div class="tag">Worldpay</div>
+              <div class="tag">UL BTT</div>
+              <div class="tag">ICC TMat</div>
+              <div class="tag">ISO 8583</div>
             </div>
           </div>
 
           <div class="exp-item">
             <div class="exp-role">Senior Test Engineer</div>
-            <div class="exp-company">Valor Paytech, Chennai</div>
+            <div class="exp-company">Valor Paytech — Chennai</div>
             <div class="exp-period">October 2021 – October 2024</div>
             <div class="exp-bullets">
               <div class="exp-bullet">UI Payment Portal and POS Terminal Test Engineer for the Valor Paytech Gateway — an Omnichannel Fintech Solution.</div>
@@ -447,13 +364,16 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-we
               <div class="exp-bullet">Participated in Agile ceremonies and reported defects via TestLink across multiple product lines.</div>
             </div>
             <div class="tag-row">
-              <div class="tag">POS Testing</div><div class="tag">TestLink</div><div class="tag">Agile</div><div class="tag">Quality Metrics</div>
+              <div class="tag">POS Testing</div>
+              <div class="tag">TestLink</div>
+              <div class="tag">Agile</div>
+              <div class="tag">Quality Metrics</div>
             </div>
           </div>
 
           <div class="exp-item">
             <div class="exp-role">Test Engineer</div>
-            <div class="exp-company">ISO Access Private Limited, Chennai</div>
+            <div class="exp-company">ISO Access Private Limited — Chennai</div>
             <div class="exp-period">July 2019 – October 2020</div>
             <div class="exp-bullets">
               <div class="exp-bullet">UI Payment Portal and POS Terminal Test Engineer for ISO Access (later rebranded as Valor Paytech).</div>
@@ -461,20 +381,24 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-we
               <div class="exp-bullet">Reported issues via bug tracking tools and provided regular quality updates.</div>
             </div>
             <div class="tag-row">
-              <div class="tag">EMV Certification</div><div class="tag">L3 MSR</div><div class="tag">Bug Tracking</div>
+              <div class="tag">EMV Certification</div>
+              <div class="tag">L3 MSR</div>
+              <div class="tag">Bug Tracking</div>
             </div>
           </div>
 
           <div class="exp-item">
-            <div class="exp-role">Account Manager (Business Development)</div>
-            <div class="exp-company">Safexpress Private Limited, Chennai</div>
+            <div class="exp-role">Account Manager — Business Development</div>
+            <div class="exp-company">Safexpress Private Limited — Chennai</div>
             <div class="exp-period">September 2018 – March 2019</div>
             <div class="exp-bullets">
-              <div class="exp-bullet">Managed key accounts for India's leading Logistics Provider — clients included Renault-Nissan, Tata Chemicals, and SEW Eurodrive.</div>
-              <div class="exp-bullet">Resolved accounting, billing, and service delivery issues; built deep expertise in Supply Chain and Logistics Operations.</div>
+              <div class="exp-bullet">Managed key accounts for India's leading logistics provider — clients included Renault-Nissan, Tata Chemicals, SEW Eurodrive, Subros Ltd, and Wittur Elevators.</div>
+              <div class="exp-bullet">Resolved accounting, billing, and service delivery issues; developed deep expertise in Supply Chain and Logistics Operations.</div>
             </div>
             <div class="tag-row">
-              <div class="tag">Key Accounts</div><div class="tag">Business Development</div><div class="tag">Logistics</div>
+              <div class="tag">Key Accounts</div>
+              <div class="tag">Business Development</div>
+              <div class="tag">Logistics</div>
             </div>
           </div>
 
@@ -484,6 +408,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-we
 
   </div>
 
-  <!-- FOOTER -->
-  <div class="page-footer">
-    <div class="footer-name">MUZAMIL IDROOS · CERT
+</div>
+</body>
+</html>
